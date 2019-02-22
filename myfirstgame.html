@@ -1,0 +1,44 @@
+<html>
+  <head>
+ <script src="p5/p5.min.js"></script>
+<style>
+  body{
+    overFlow:hidden;
+    padding:0;
+    margin:0;
+    
+  }
+</style>
+  </head>
+  <body>
+  <script>
+    var w=window.innerWidth;
+    var h= window.innerHeight;
+    var posX=100;// this is the X position of the player
+    var posY=100;// this is the Y position of the player
+    var userWidth=100;//sets the width and height to 100 by 100 pixels
+    var userSpeed=16;//the allows the box to move 40 pixels in any direction
+    function setup(){
+      createCanvas(w,h);//creates a canvas that allows you to draw
+    }
+  function draw(){// function runs 60 times per second
+   background(255);// draws a background the color white
+   fill(color("#1589ff"));// fills the color of the rectangle blue
+   strokeWeight(0);// there is no border
+   rect(posX,posY,userWidth,userWidth,15);// creates a rectangle that is 100px by 100px
+   if((keyIsDown(65))&& (posX > 0)){// the user has to
+     posX-=userSpeed;
+   }
+   if ((keyIsDown(68))&& (posX< w-100)){
+     posX+=userSpeed;
+   }
+  if ((keyIsDown(87))&& (posY> 0)){
+     posY-=userSpeed;
+   }
+    if ((keyIsDown(83))&& (posY<h-100)){
+     posY+=userSpeed;
+   }
+  }
+  </script>
+  </body>
+</html>
