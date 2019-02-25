@@ -1,0 +1,51 @@
+<html>
+  <head>
+  <script src="p5/p5.min.js"></script>
+  </head>
+<body>
+  <h1 id="coordinates"></h1>
+  <script>
+    var w= window.innerWidth;
+    var h = window.innerHeight;
+    var ball= new ball(); //creates a global object
+    function setup(){
+      createCanvas(w,h);
+    }
+    
+    function draw(){
+      background(255);// makes the background white
+    ball.show();
+    ball.move();//calls the function move the ball
+      ball.position();
+    }
+    
+    function ball(){// this is a object
+      this.x =100;
+      this.y=100;
+      this.show = function(){
+       fill(color("red"));
+        ellipse(this.x,this.y,50,50);
+      }
+    this.move= function(){
+      if(keyIsDown(65) && (this.x > 15)){
+        this.x-=10;
+      }
+    if (keyIsDown(68)&& (this.x< w-40)){
+      this.x+=10;
+    }
+       if ((keyIsDown(87))&& (this.y> 0)){
+    this.y-=10;
+   }
+   if ((keyIsDown(83))&& (this.y< h-40)){
+     this.y+=10;
+   }
+    }
+    this.position=function(){
+       document.getElementById("coordinates").innerHTML= this.x+" "+ this.y;
+     }
+    }
+     
+  
+  </script>
+</body>
+</html>
