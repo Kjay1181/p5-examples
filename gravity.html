@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <script src= "p5/p5.min.js"></script>
+ <style>
+ .body{
+   margin=0;
+   padding=0;
+   
+ }
+ </style>
+  </head>
+  <body>
+    <script>
+      var w= window.innerWidth;
+      var h=window.innerHeight;
+      var jumper= new jumper();
+      let img;
+    function preload(){
+      
+    }
+      function setup(){
+        createCanvas(w,h);
+      }
+      function draw(){
+        background(0);
+        jumper.show();
+        jumper.update();
+      }
+      function jumper(){
+     this.x=50;
+     this.y=0;
+     this.gravity=0.5;// the force of gravity
+     this.lift=-10;//opposing force of gravity
+     this.velocity=0;// speed of gravity
+      this.show=function(){
+      fill(color("red"));
+      ellipse(this.x,this.y,10,10);
+      }
+      this.up=function(){
+        this.velocity+=this.lift;//when I go up im gonna impose the gravity by negative ten
+        
+      }
+        this.update=function(){//makes the ball fall down
+          this.velocity+= this.gravity;
+          this.y+=this.velocity;
+          this.velocity*=0.9;
+          if(this.y > h){// stops on the floor
+            this.y= h;
+            this.velocity=-50;
+          }
+          if (this.y<0){//stops on the ceiling
+         this.y=0;
+          this.velocity=0;
+          
+          }
+        }
+      }
+    function keyPressed(){//reserved name in order to press a key call this name
+      if (keyCode===32);
+      jumper.up();
+    }
+    </script>
+  </body>
+</html>
