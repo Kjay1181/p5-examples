@@ -1,0 +1,3 @@
+function platform(){
+  rect()
+}

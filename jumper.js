@@ -15,10 +15,10 @@
         
       }
         this.move= function(){
-            if(keyIsDown(65) && (this.x > 15)){//when a button is pressed moves left
+            if(keyIsDown(65) && (this.x > 0)){//when a button is pressed moves left
         this.x-=10;
       }
-    if (keyIsDown(68)&& (this.x< w-40)){//when d button is pressed moves right
+    if (keyIsDown(68)&& (this.x< w-0)){//when d button is pressed moves right
       this.x+=10;
     }
       
@@ -42,6 +42,8 @@
         }
       }
     function keyPressed(){//reserved name in order to press a key call this name
-      if (keyCode===32);
+      if (keyCode===32){
       jumper.up();
+    }
+      
     }

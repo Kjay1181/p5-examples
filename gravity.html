@@ -3,6 +3,7 @@
     <script src= "p5/p5.min.js"></script>
     <script src= "jumper.js"></script>
     <script src="barrier.js"></script>
+    <script src="platform.js"></script>
     <script src="p5/p5.collide2d.min.js"></script>
  <style>
  body{
@@ -18,7 +19,7 @@
       var h=window.innerHeight;
       var jumper= new jumper();
      var barrier=new barrier();
-     var hit=false//part of the detection method
+     var hit=false;//part of the detection method
       
       function setup(){
         createCanvas(w,h);
@@ -30,14 +31,16 @@
         jumper.move();
         barrier.show();
         barrier.update();
+       
         hit = collideRectCircle(
-        barrier.x,
+       barrier.x,
         barrier.y,
-        barrier.width,
+       barrier.width,
         barrier.height,
         jumper.x,
         jumper.y,
-        25);//continuesely checks if the collision is true
+        jumper.height,
+        jumper.width);//continuesely checks if the collision is true
 if (hit=== true){
   noLoop();
 }
