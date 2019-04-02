@@ -5,7 +5,7 @@ function barrier(){
  
   this.x= w+100;
   this.y= Math.floor(Math.random()*h);
-  this.leftPull=1;
+  this.leftPull=0.1;
   this.velocity=5;
   this.width=60;
   this.height=60;
@@ -18,5 +18,10 @@ function barrier(){
   this.update=function(){//makes the ball fall down
   this.velocity+= this.leftPull;
   this.x-=this.velocity;
-      }
+ if (barrier.x === 0-100){// fix this line of code to  make the barrier continuesley run
+   barrier.x === w+ barrier.width;
+ }
+  }
+      
+
 }

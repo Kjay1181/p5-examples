@@ -19,8 +19,9 @@
       var h=window.innerHeight;
       var jumper= new jumper();
      var barrier=new barrier();
+     var platform= new platform();
      var hit=false;//part of the detection method
-      
+      var hitOne=false;
       function setup(){
         createCanvas(w,h);
       }
@@ -31,7 +32,7 @@
         jumper.move();
         barrier.show();
         barrier.update();
-       
+       platform.show();
         hit = collideRectCircle(
        barrier.x,
         barrier.y,
@@ -44,8 +45,14 @@
 if (hit=== true){
   noLoop();
 }
+      hitOne=collideRectCircle(platform.x,platform.y,platform.width/2,platform.height/2,jumper.x,jumper.y,jumper.height/2,jumper.width/2);
+        if (hitOne=== true){
+          jumper.up();
+        }
+     
+        
       }
-  
+ 
     
     </script>
   </body>

@@ -4,11 +4,11 @@
      this.gravity=0.5;// the force of gravity
      this.lift=-10;//opposing force of gravity
      this.velocity=0;// speed of gravity
-     this.width=25;
-  this.height=25;
+     this.width=50;
+  this.height=50;
       this.show=function(){
       fill(color("red"));
-      ellipse(this.x,this.y,this.width,this.height);
+      ellipse(this.x,this.y,this.width/2,this.height/2);
       }
       this.up=function(){
         this.velocity+=this.lift;//when I go up im gonna impose the gravity by negative ten
