@@ -8,7 +8,7 @@
   this.height=50;
       this.show=function(){
       fill(color("red"));
-      ellipse(this.x,this.y,this.width/2,this.height/2);
+      ellipse(this.x,this.y,this.width,this.height);
       }
       this.up=function(){
         this.velocity+=this.lift;//when I go up im gonna impose the gravity by negative ten

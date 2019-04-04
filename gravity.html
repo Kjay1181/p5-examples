@@ -11,10 +11,24 @@
    padding:0;
    margin:0;
  }
+ #score{
+    position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+color:"yellow";
+
+ }
+ 
  </style>
   </head>
   <body>
+    <h1 id="score"></h1>
+   
+    
+    
     <script>
+      var list=0;
       var w= window.innerWidth;
       var h=window.innerHeight;
       var jumper= new jumper();
@@ -36,21 +50,20 @@
         hit = collideRectCircle(
        barrier.x,
         barrier.y,
-       barrier.width,
-        barrier.height,
+       barrier.width-25,
+        barrier.height-25,
         jumper.x,
         jumper.y,
         jumper.height,
-        jumper.width);//continuesely checks if the collision is true
+        jumper.width/2);
 if (hit=== true){
   noLoop();
 }
-      hitOne=collideRectCircle(platform.x,platform.y,platform.width/2,platform.height/2,jumper.x,jumper.y,jumper.height/2,jumper.width/2);
+      hitOne=collideRectCircle(platform.x,platform.y,platform.width/2,platform.height/2,jumper.x,jumper.y,50);
         if (hitOne=== true){
           jumper.up();
         }
-     
-        
+   
       }
  
     
