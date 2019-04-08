@@ -15,8 +15,7 @@
     position: absolute;
   left: 0px;
   top: 0px;
-  z-index: -1;
-color:"yellow";
+color:"blue";
 
  }
  
@@ -28,7 +27,6 @@ color:"yellow";
     
     
     <script>
-      var list=0;
       var w= window.innerWidth;
       var h=window.innerHeight;
       var jumper= new jumper();
@@ -36,6 +34,7 @@ color:"yellow";
      var platform= new platform();
      var hit=false;//part of the detection method
       var hitOne=false;
+        var list=0;
       function setup(){
         createCanvas(w,h);
       }
@@ -47,7 +46,7 @@ color:"yellow";
         barrier.show();
         barrier.update();
        platform.show();
-        hit = collideRectCircle(
+        hit = collideRectCircle(// user and the moving object
        barrier.x,
         barrier.y,
        barrier.width-25,
@@ -59,7 +58,7 @@ color:"yellow";
 if (hit=== true){
   noLoop();
 }
-      hitOne=collideRectCircle(platform.x,platform.y,platform.width/2,platform.height/2,jumper.x,jumper.y,50);
+      hitOne=collideRectCircle(platform.x,platform.y,platform.width/2,platform.height/2,jumper.x,jumper.y,50);//the user bounces on the platform
         if (hitOne=== true){
           jumper.up();
         }
