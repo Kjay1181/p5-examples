@@ -1,7 +1,6 @@
-// this is going to be the dog
-function platform(){
-  this.x=500;
-  this.y=500;
+function cheese(){
+  this.x=50;
+  this.y=50;
   this.width=100;
   this.height=100;
   this.show=function(){

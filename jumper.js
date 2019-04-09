@@ -32,7 +32,7 @@ function jumper(){
           this.velocity*=0.9;
           if(this.y > h){// stops on the floor
             this.y= h;
-            this.velocity=-50;
+            this.velocity=0;
           }
           if (this.y<0){//stops on the ceiling
          this.y=0;
