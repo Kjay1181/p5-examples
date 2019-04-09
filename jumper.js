@@ -1,4 +1,4 @@
-    function jumper(){
+function jumper(){
      this.x=50;
      this.y=0;
      this.gravity=0.5;// the force of gravity

@@ -9,7 +9,7 @@ function barrier(){
   this.velocity=5;
   this.width=100;
   this.height=100;
- s
+ this.count;
 
   this.show=function(){
     fill(color("orange"));
@@ -19,7 +19,8 @@ function barrier(){
   this.update=function(){//makes the ball fall down
   this.velocity+= this.leftPull;
   this.x-=this.velocity;
- if (this.x <0-this.width){
+ if (this.x <0){
+   this.count++;
    this.velocity=0;
    this.x= w+100;
   this.y= Math.floor(Math.random()*h);

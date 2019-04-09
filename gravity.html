@@ -16,14 +16,11 @@
   left: 0px;
   top: 0px;
 color:"blue";
-
  }
  
  </style>
   </head>
   <body>
-    <h1 id="score"></h1>
-   
     
     
     <script>
@@ -62,10 +59,12 @@ if (hit=== true){
         if (hitOne=== true){
           jumper.up();
         }
-   
+   document.getElementById("score").innerHTML="Score:"+" "+"barrier.count";
       }
  
     
     </script>
+    <h1 id="score"></h1>
+   
   </body>
 </html>
