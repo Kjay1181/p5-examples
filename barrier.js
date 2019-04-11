@@ -10,7 +10,7 @@ function barrier(){
   this.velocity=5;
   this.width=100;
   this.height=100;
- this.count=0;
+ 
 
   this.show=function(){
     fill(color("orange"));

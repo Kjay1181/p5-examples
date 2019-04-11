@@ -39,7 +39,7 @@ color:white;
      var cheese= new cheese();
      var hit=false;//part of the detection method
       var hitOne=false;// collision betweeen the user and the dog
-      var hitTwo= false;// this is the collision between the cheese and the user
+      
       
         var list=0;// global variable for the scoring system
       function setup(){
@@ -53,7 +53,9 @@ color:white;
         barrier.show();
         barrier.update();
        platform.show();
+       platform.update();
        cheese.show();
+       
         hit = collideRectCircle(// user and the moving object
        barrier.x,
         barrier.y,
@@ -72,13 +74,9 @@ if (hit=== true){
           noLoop();
          document.getElementById("youlose").innerHTML="you lose hahaha";
         }
-  hitTwo=collideCircleCircle(jumper.x,jumper.y,jumper.width,jumper.height,cheese.x,cheese.y,cheese.width,cheese.height);
-   if (hitTwo===true){
-     cheese.show();
-     console.log("hi");
-   }
+  
    
-   document.getElementById("score").innerHTML="Score="+" "+cheese.count;
+  document.getElementById("score").innerHTML="Score="+" "+cheese.count;
   
       }
  
